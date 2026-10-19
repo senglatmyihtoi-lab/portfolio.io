@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0ea5e9',
+            dark: '#0f172a',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      }
+      .section-padding {
+        @apply py-16 md:py-24;
+      }
+      .card-hover {
+        @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="#" class="text-xl font-bold text-primary">Portfolio</a>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="hover:text-primary transition-colors">Home</a>
+          <a href="#about" class="hover:text-primary transition-colors">About</a>
+          <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+          <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+          <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden text-slate-700 text-xl">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-3 space-y-3">
+        <a href="#home" class="block hover:text-primary">Home</a>
+        <a href="#about" class="block hover:text-primary">About</a>
+        <a href="#skills" class="block hover:text-primary">About</a>
+        <a href="#projects" class="block hover:text-primary">Projects</a>
+        <a href="#contact" class="block hover:text-primary">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-32 pb-20 section-padding bg-gradient-to-br from-slate-100 to-blue-50">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2">
+        <p class="text-primary font-medium">Hello, I'm</p>
+        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark leading-tight">Your Name</h1>
+        <h2 class="text-xl md:text-2xl text-slate-600 mt-2">Frontend / Web Developer</h2>
+        <p class="mt-5 text-slate-600 max-w-lg">
+          I build beautiful, responsive websites with modern web technologies. Passionate about clean code and user-friendly design.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-4">
+          <a href="#projects" class="bg-primary text-white px-6 py-3 rounded-lg font-medium card-hover">View My Work</a>
+          <a href="#contact" class="border border-primary text-primary px-6 py-3 rounded-lg font-medium card-hover">Contact Me</a>
+        </div>
+        <div class="mt-6 flex gap-4 text-xl">
+          <a href="#" class="text-slate-700 hover:text-primary transition-colors"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="text-slate-700 hover:text-primary transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="text-slate-700 hover:text-primary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+          <span class="text-8xl text-primary/70"><i class="fa-solid fa-user"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark">About Me</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-3"></div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="md:w-1/2">
+          <p class="text-slate-600 leading-relaxed">
+            I am a web developer with a passion for creating interactive websites. I love turning ideas into functional web products. I focus on responsive design, clean UI and maintainable code.
+          </p>
+          <p class="text-slate-600 leading-relaxed mt-4">
+            When I'm not coding, I learn new frameworks, contribute to open source and explore UI/UX design.
+          </p>
+          <a href="#" class="inline-block mt-6 bg-primary text-white px-5 py-2.5 rounded-lg card-hover">Download CV</a>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-2 gap-4">
+          <div class="bg-slate-50 p-5 rounded-lg text-center card-hover">
+            <h3 class="text-3xl font-bold text-primary">20+</h3>
+            <p class="text-slate-600">Projects</p>
+          </div>
+          <div class="bg-slate-50 p-5 rounded-lg text-center card-hover">
+            <h3 class="text-3xl font-bold text-primary">2+</h3>
+            <p class="text-slate-600">Years Experience</p>
+          </div>
+          <div class="bg-slate-50 p-5 rounded-lg text-center card-hover">
+            <h3 class="text-3xl font-bold text-primary">10+</h3>
+            <p class="text-slate-600">Happy Clients</p>
+          </div>
+          <div class="bg-slate-50 p-5 rounded-lg text-center card-hover">
+            <h3 class="text-3xl font-bold text-primary">5+</h3>
+            <p class="text-slate-600">Certificates</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-padding bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark">My Skills</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-3"></div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-lg text-center card-hover">
+          <i class="fa-brands fa-html5 text-4xl text-orange-500"></i>
+          <h3 class="mt-3 font-semibold">HTML</h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg text-center card-hover">
+          <i class="fa-brands fa-css3-alt text-4xl text-blue-500"></i>
+          <h3 class="mt-3 font-semibold">CSS</h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg text-center card-hover">
+          <i class="fa-brands fa-js text-4xl text-yellow-400"></i>
+          <h3 class="mt-3 font-semibold">JavaScript</h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg text-center card-hover">
+          <i class="fa-brands fa-tailwindcss text-4xl text-sky-400"></i>
+          <h3 class="mt-3 font-semibold">Tailwind CSS</h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg text-center card-hover">
+          <i class="fa-brands fa-react text-4xl text-cyan-400"></i>
+          <h3 class="mt-3 font-semibold">React</h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg text-center card-hover">
+          <i class="fa-brands fa-git text-4xl text-red-500"></i>
+          <h3 class="mt-3 font-semibold">Git</h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg text-center card-hover">
+          <i class="fa-brands fa-github text-4xl"></i>
+          <h3 class="mt-3 font-semibold">GitHub</h3>
+        </div>
+        <div class="bg-white p-6 rounded-lg text-center card-hover">
+          <i class="fa-solid fa-database text-4xl text-slate-500"></i>
+          <h3 class="mt-3 font-semibold">Database</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section-padding bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark">My Projects</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-3"></div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project Card 1 -->
+        <div class="bg-slate-50 rounded-lg overflow-hidden card-hover">
+          <div class="h-48 bg-primary/30 flex items-center justify-center">
+            <i class="fa-solid fa-code text-5xl text-primary"></i>
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold">Project One</h3>
+            <p class="text-slate-600 mt-2">A responsive website built with HTML, CSS and Tailwind CSS.</p>
+            <div class="mt-4 flex gap-3">
+              <a href="#" class="text-primary hover:underline">Live Demo</a>
+              <a href="#" class="text-primary hover:underline">Github</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="bg-slate-50 rounded-lg overflow-hidden card-hover">
+          <div class="h-48 bg-primary/30 flex items-center justify-center">
+            <i class="fa-solid fa-cart-shopping text-5xl text-primary"></i>
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold">E-commerce UI</h3>
+            <p class="text-slate-600 mt-2">Simple e-commerce landing page with Tailwind CSS.</p>
+            <div class="mt-4 flex gap-3">
+              <a href="#" class="text-primary hover:underline">Live Demo</a>
+              <a href="#" class="text-primary hover:underline">Github</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="bg-slate-50 rounded-lg overflow-hidden card-hover">
+          <div class="h-48 bg-primary/30 flex items-center justify-center">
+            <i class="fa-solid fa-calculator text-5xl text-primary"></i>
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold">JS Calculator</h3>
+            <p class="text-slate-600 mt-2">Simple calculator app with JavaScript and Tailwind.</p>
+            <div class="mt-4 flex gap-3">
+              <a href="#" class="text-primary hover:underline">Live Demo</a>
+              <a href="#" class="text-primary hover:underline">Github</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark">Contact Me</h2>
+        <div class="w-20 h-1 bg-primary mx-auto mt-3"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
+          <p class="text-slate-600 mb-6">Feel free to send me a message for collaboration or project inquiries.</p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <span>yourmail@example.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <span>+00 123 456 789</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <span>Your City, Country</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <form class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-primary/50">
+              <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-primary/50">
+            </div>
+            <input type="text" placeholder="Subject" class="w-full p-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-primary/50">
+            <textarea rows="5" placeholder="Your Message" class="w-full p-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-primary/50"></textarea>
+            <button type="submit" class="bg-primary text-white px-6 py-3 rounded-lg font-medium card-hover w-full sm:w-auto">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p>© 2026 Your Name. All rights reserved.</p>
+      <div class="mt-4 flex justify-center gap-4 text-xl">
+        <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS for Mobile Menu Toggle -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({ behavior:'smooth' });
+        mobileMenu.classList.add('hidden');
+      })
+    })
+  </script>
+</body>
+</html>
